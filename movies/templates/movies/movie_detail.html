@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ movie.title }}</title>
+    <style>
+        body { background-color: #111; color: white; font-family: sans-serif; }
+        .container { width: 80%; margin: auto; }
+        .header { background: #444; padding: 20px; text-align: center; font-size: 1.5em; }
+        .content { padding: 20px; }
+        h1 { font-size: 2em; }
+        p { margin: 5px 0; }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #444;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a.button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">JETFLIX</div>
+        <div class="content">
+            <h1>{{ movie.title }}</h1>
+            <p><strong>Año de publicación:</strong> {{ movie.release_year }}</p>
+            <p><strong>Director:</strong> {{ movie.director }}</p>
+            <p><strong>Género:</strong> {{ movie.genre }}</p>
+            <p><strong>Sinopsis:</strong> {{ movie.synopsis }}</p>
+
+            <!-- Botón volver -->
+            <a href="{% url 'movie_list' %}" class="button">← Volver al listado</a>
+        </div>
+    </div>
+</body>
+</html>
