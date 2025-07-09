@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <title>Películas</title>
     <style>
-        body { background-color: #111; color: white; font-family: sans-serif; }
-        .container { width: 80%; margin: auto; }
-        .header { background: #444; padding: 20px; text-align: center; font-size: 1.5em; }
+        body {
+            background-color: #111;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .header {
+            background: #b30000; /* Rojo intenso */
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            font-weight: bold;  /* Texto más grueso */
+            letter-spacing: 1px;
+        }
+
         .movie-list a {
             display: block;
             padding: 10px;
             border-bottom: 1px solid #555;
             color: white;
             text-decoration: none;
+            font-weight: 500;
         }
+
         .movie-list a:hover {
             background: #222;
         }
@@ -22,6 +42,7 @@
 <body>
     <div class="container">
         <div class="header">JETFLIX</div>
+
         <div class="movie-list">
             {% for movie in movies %}
                 <a href="{% url 'movie_detail' movie.id %}">
